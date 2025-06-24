@@ -1,0 +1,185 @@
+\documentclass[16pt,a4paper]{article}
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[russian,english]{babel}
+
+\setlength{\footskip}{15pt}
+\sloppy 
+\usepackage{makecell}
+\usepackage[link=off]{phonenumbers}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[pdftex]{hyperref}
+\usepackage{fancyhdr}
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}% Adjust margins
+\addtolength{\oddsidemargin}{-0.0in}
+\addtolength{\evensidemargin}{-0.0in}
+\addtolength{\textwidth}{0in}
+\addtolength{\topmargin}{20pt}
+\addtolength{\textheight}{0.0in}
+
+\urlstyle{same}
+
+\usepackage{xcolor}% http://ctan.org/pkg/xcolor
+\usepackage{hyperref}% http://ctan.org/pkg/hyperref
+\hypersetup{
+  colorlinks=true,
+  linkcolor=blue!50!red,
+  linkbordercolor=red,
+  urlcolor=blue!70!black
+}
+
+%Заголовок
+\usepackage{titlesec}
+
+\titleformat{\section}
+  {\normalfont\Large\bfseries}{\thesection}{1em}{}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-10pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{5pt}]
+
+%-------------------------
+% Custom commands
+\def \ifempty#1{\def\temp{#1} \ifx\temp\empty }
+
+\newcommand{\resumeItem}[2]{
+  \item\small{
+  	\ifempty{#1}#2\else\textbf{#1}{: #2 \vspace{-2pt}}\fi
+  }
+}
+
+\usepackage[dvipsnames]{xcolor}
+\definecolor{mygray}{gray}{0}
+\usepackage{fancybox}
+
+\usepackage{lmodern}
+\usepackage{tikz}
+\usepackage[russian, english]{babel}
+
+% Style definition
+\tikzset{rndblock/.style={rounded corners,rectangle,draw,outer sep=0pt}}
+
+% Command Definition
+% 1 optional to customize the aspect, 2 mandatory: text to be framed
+\newcommand{\tframed}[2][]{\tikz[baseline=(h.base)]\node[rndblock,#1] (h) {\color{black}{#2}};}
+
+\newcommand*{\mystrut}{\rule[-0.2\baselineskip]{0pt}{0.8\baselineskip}}
+\newcommand{\skill}[1]{\tframed[lightgray]{\mystrut#1}}
+
+
+\newcommand{\resumeSubheading}[5]{
+  \vspace{-1pt}\item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & \textcolor{mygray}{#2} \\
+      \textit{\small#3} & \textcolor{mygray}{\textit{\small #4}} \\
+      \textit{\small#5} \\
+    \end{tabular*}\vspace{5pt}
+}
+
+\newcommand{\resumeExpSubheading}[5]{
+  \vspace{-1pt}\item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textbf{#1}  & \textcolor{mygray}{#2} \\
+      \textit{\small#3} & \textcolor{mygray}{\textit{\small #4}} \\
+      {\scriptsize#5}
+    \end{tabular*}\vspace{4pt}
+}
+
+\newcommand{\resumeProjSubheading}[4]{
+  \vspace{-1pt}\item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textbf{#1}  & \textcolor{mygray}{#2} \\
+      \scriptsize {#3} & \textcolor{mygray}{\textit{\small #4}} \\
+    \end{tabular*}\vspace{8pt}
+}
+
+\newcommand{\resumeSubItem}[2]{\resumeItem{#1}{#2}\vspace{-8pt}}
+
+\renewcommand{\labelitemii}{$\circ$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=*]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}[leftmargin=0.2in]}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+\usepackage{changepage}
+\newcommand{\resumeDesc}[1]{\begin{adjustwidth}{5pt}{0pt}\vspace{-2pt}{\small{#1}}\end{adjustwidth}}
+
+%-------------------------------------------
+%%%%%%  CV STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+
+\selectlanguage{russian}
+
+%----------HEADING-----------------
+\begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+  \textbf{\Large Алина Лисянская} & Email\vspace{7pt}: \href{mailto:artem.dvirnyak@gmail.com}{arlisyanskaya@edu.hse.ru}\\
+  
+  Github: \href{https://github.com/kurabier/}{kurabier} & Телефон : +7\hspace{0.5ex}915\hspace{0.5ex}402\hspace{0.5ex}35\hspace{0.5ex}50 \\
+\end{tabular*}
+\vspace{9pt}
+
+%-----------EDUCATION-----------------
+%-----------EDUCATION-----------------
+\section{Образование}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {Национальный исследовательский вуз «Высшая школа экономики»)}{Москва, Россия}
+        {ПМИ, компьютерные науки и анализ данных}{Сент. 2024 - Авг. 2028}{Бакалавр, 1 курс}
+    \resumeSubheading
+      {РГПУ имени А. И. Герцена}{Санкт-Петербург, Россия}
+        {география}{Сент. 2021 - Авг. 2023}{Незаконченное высшее, бакалавриат}
+    \resumeSubheading
+      {лицей НИУ ВШЭ}{Москва, Россия}
+        {информатика, математика и инженерия}{Сент. 2019 - Авг. 2021}{}
+  \resumeSubHeadingListEnd
+  
+\section{Проекты}
+  \resumeSubHeadingListStart
+    \resumeProjSubheading
+      {\href{https://github.com/kurabier}{In the middle of nowhere Telegram Bot}}{}
+      {\skill{Python} \skill{asyncio} \skill{Telegram API}}{Май 2025}
+          \resumeDesc{Скоро здесь будет бот для заказа билетов на фестиваль «Посреди Нигде»}
+          \resumeProjSubheading
+      {\href{https://hwapp-fybnnbfezscibrjhzsqlpu.streamlit.app/}{Приложение по анализу температурных данных}}{}
+      {\skill{Python} \skill{streamlit} }{Март 2025}
+          \resumeDesc{Небольшое приложение на Streamlit по анализу температурных данных}
+      
+  \resumeSubHeadingListEnd
+%
+%--------PROGRAMMING SKILLS------------
+\section{Навыки Программирования}
+ \resumeSubHeadingListStart
+   \item{
+     \textbf{Языки}{: C++, Python, Bash}
+   }\vspace{0pt}
+   \item{
+     \textbf{Технологии}{: Git, Docker, SQL, matplotlib, numpy, pandas, join, streamlit}
+   }
+   \vspace{0pt}
+   \item{
+     \textbf{Навыки}{: Алгоритмы и Структуры Данных, Linux, ООП, Анализ Данных}
+   }
+ \resumeSubHeadingListEnd
+
+%-------------------------------------------
+\end{document}
