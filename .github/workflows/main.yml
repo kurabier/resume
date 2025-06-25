@@ -1,10 +1,7 @@
-name: CI/CD Workflow
+name: Build LaTeX PDF
 
 on:
   push:
-    branches:
-      - main
-  pull_request:
     branches:
       - main
 
@@ -13,16 +10,20 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
+    - name: Checkout repository
+      uses: actions/checkout@v3
 
-      - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v2
+    - name: Install LaTeX
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y texlive-full
 
-      - name: Build Docker image
-        run: |
-          docker build -t my-image:latest .
+    - name: Compile LaTeX document
+      run: |
+        latexmk -pdf main.tex
 
-      - name: Run tests
-        run: |
-          echo "Тесты выполнены"
+    - name: Upload PDF artifact
+      uses: actions/upload-artifact@v3
+      with:
+        name: PDF
+        path: main.pdf
