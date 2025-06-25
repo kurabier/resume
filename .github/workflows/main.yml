@@ -20,6 +20,7 @@ jobs:
 
     - name: Compile LaTeX document
       run: |
+        cd CV
         latexmk -pdf main.tex
 
     - name: Upload PDF artifact
